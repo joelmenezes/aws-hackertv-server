@@ -1,0 +1,198 @@
+.news-item {
+    background-color: #f6f6ef;
+    padding: 10px 10px 10px 80px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    line-height: 20px
+}
+
+.news-item .score {
+    color: #f60;
+    font-size: 1.1em;
+    font-weight: 700;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 80px;
+    text-align: center;
+    margin-top: -10px
+}
+
+.news-item .host,
+.news-item .meta {
+    font-size: .85em;
+    color: #828282
+}
+
+.news-item .host a,
+.news-item .meta a {
+    color: #828282;
+    text-decoration: underline
+}
+
+.news-item .host a:hover,
+.news-item .meta a:hover {
+    color: #f60
+}
+
+</style></head>.news-list {
+    margin: 10px 0
+}
+
+.news-list {
+    position: absolute;
+    
+    width: 100%;
+    transition: all .5s cubic-bezier(.55, 0, .1, 1);
+}
+
+.news-list,
+.news-list-nav {
+    background-color: #fff;
+    border-radius: 2px;
+}
+.news-list-nav {
+    padding: 15px 30px;
+    position: fixed;
+    text-align: center;
+    top: 35px;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    transition: width .2s, opacity .4s;
+    opacity: 1;
+    background-color: #efc14e;
+    z-index: 999999
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    background-color: #f2f3f5;
+    margin: 0;
+    padding-top: 55px;
+    overflow-y: scroll
+}
+
+a,
+body {
+    color: #34495e
+}
+
+a {
+    text-decoration: none
+}
+
+.header {
+    background-color: #f60;
+    position: fixed;
+    z-index: 999;
+    height: 55px;
+    top: 0;
+    left: 0;
+    right: 0
+}
+
+.header .inner {
+    max-width: 1400px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 15px 5px
+}
+
+.header a {
+    color: black;
+    line-height: 24px;
+    transition: color .15s ease;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    letter-spacing: .075em;
+    font-size: 12pt;
+}
+
+.header a:hover {
+    color: #fff
+}
+
+.header a.router-link-active {
+    color: #fff;
+    font-weight: 400
+}
+
+.header a:nth-child(6) {
+    margin-right: 0
+}
+
+.header .github {
+    color: black;
+    font-size: .9em;
+    margin: 6px;
+    
+}
+
+.logo {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.view {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .2s ease
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0
+}
+
+@media (max-width:860px) {
+    .header .inner {
+        padding: 10px
+    }
+}
+
+@media (max-width:600px) {
+    .header .inner {
+        padding: 10px
+    }
+    .header a {
+       
+    }
+}
+
+.news-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.thumbnail {
+    width: 55px;
+}
+
+
+.navButton {
+    color: inherit;
+    display: inline-block;
+    padding: 9px 7px 0px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}

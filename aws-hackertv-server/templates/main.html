@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HackerTV.io</title>
+	<meta
+		charset="UTF-8" 
+		name="viewport" 
+		content="width=device-width, initial-scale=1"
+	>
+	<link rel="stylesheet" href="/static/css/other.css?q=21533332123343124597800"
+   	type="text/css" media="screen" charset="utf-8" />
+
+	<link rel="shortcut icon" href="/static/favicon.ico">
+</head>
+<body>
+	<header class="header">
+		<nav class="inner">
+			<div style="display: inline-block; color: black">
+				<a href="/">
+					<img src="/static/logo.png" alt="logo" class="logo">
+					HackerTV.io
+				</a>
+				
+			</div>
+		</nav>
+	</header>
+	
+		<div class="news-view view">
+			<div class="news-list">
+				<ul>
+				{% for row in rows %}
+					<li class="news-item">
+						<span class="score">
+							<img class="thumbnail" src={{ row["image"] }}>
+						</span>
+						<span class="title">
+							<a class="list-group-item-action" href="{{row["url"]}}" target="_blank">
+								{{ row["title"] }}
+							</a>
+						</span>
+						<span class="host">
+							({{ row['source'] }})
+						</span>
+						</br>	
+					<span class="meta">Points: {{ row["points"] }} | Posted: {{ row["created_at"] }}</span>
+					</li>
+				{% endfor %}
+					<li class="news-item">
+						<a href={{ url_for('news', page=page+1) }}>More</a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+	
+	<footer>
+	</footer>
+</body>
+</html>

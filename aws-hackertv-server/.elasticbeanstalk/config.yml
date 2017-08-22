@@ -1,0 +1,18 @@
+branch-defaults:
+  default:
+    environment: hackertv-env2
+    group_suffix: null
+global:
+  application_name: hackertv-server
+  branch: null
+  default_ec2_keyname: null
+  default_platform: python2.7
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: null
+  workspace_type: Application
