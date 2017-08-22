@@ -15,9 +15,11 @@ engine.execute('SET NAMES utf8;')
 engine.execute('SET CHARACTER SET utf8;')
 engine.execute('SET character_set_connection=utf8;')
 engine.execute("SET CHARACTER SET utf8")
-#engine.execute("DROP DATABASE IF EXISTS hackertv")
-engine.execute("CREATE DATABASE IF NOT EXISTS hackertv") #create db
-engine.execute("USE hackertv")
+#engine.execute("CREATE DATABASE IF NOT EXISTS hackertv") #create db
+#engine.execute("USE hackertv")
+engine.execute("DROP TABLE IF EXISTS hackertv")
+
+
 #Use Declaratives to create a mapping
 Base = declarative_base()
 
