@@ -11,10 +11,11 @@ sys.setdefaultencoding('utf8')
 
 application = Flask(__name__)
 listOfVideoData = []
+listOfNewVideoData = []
 
 #Connect to the DB using an engine which is used behind the scenes by the ORM
 engine = create_engine('mysql://hackertv:hackertvforaws@hackertv-server.cjk7sbsmwyfs.us-east-1.rds.amazonaws.com:3306/hackertvdb?charset=utf8', echo=True)
-engine.execute("USE hackertv")
+engine.execute("USE hackertvdb")
 
 #Use Declaratives to create a mapping
 Base = declarative_base()
@@ -44,26 +45,61 @@ class VideoData(Base):
 #populate global list of video data
 def populateList():
 	global listOfVideoData
+	global listOfNewVideoData
 
 	for row in session.query(VideoData).all():
 		listOfVideoData.append(row)
 
+	listOfNewVideoData = sorted(listOfVideoData, key=lambda x: x.time, reverse=True)
+	
 #Render Landing page
 @application.route('/')
 def index():
 	global listOfVideoData
-
+	global listOfNewVideoData
+	
 	if not listOfVideoData:
 		populateList()
-	
-	return render_template("main.html",rows = listOfVideoData[0: 30], page = 1)
+
+	return render_template("main.html",rows = listOfNewVideoData[0: 30], page = 1)
 
 #Render pages when 'More' is clicked or when a page is to be shared with 'pageno'
 @application.route('/news')
 def news():
 	global listOfVideoData
+	global listOfNewVideoData
+
+	if not listOfNewVideoData:
+		populateList()
+
+	pageno = int(request.args.get('page'))
+	displayStartRow = 30 * (pageno - 1)
+	displayEndRow = pageno * 30
+	videoDataToHTML = listOfNewVideoData[displayStartRow: displayEndRow]
+	
+	return render_template("main.html",rows = videoDataToHTML, page = pageno)	
+
+@application.route('/popular')
+def popular():
+	global listOfVideoData
+	global listOfNewVideoData
 	
 	if not listOfVideoData:
+		populateList()
+
+	#pageno = int(request.args.get('page'))
+	displayStartRow = 0
+	displayEndRow = 30
+	videoDataToHTML = listOfVideoData[displayStartRow: displayEndRow]
+	
+	return render_template("popular.html", rows = videoDataToHTML, page = 1)	
+
+@application.route('/popularNews')
+def popularNews():
+	global listOfVideoData
+	global listOfNewVideoData
+
+	if not listOfNewVideoData:
 		populateList()
 
 	pageno = int(request.args.get('page'))
@@ -71,7 +107,8 @@ def news():
 	displayEndRow = pageno * 30
 	videoDataToHTML = listOfVideoData[displayStartRow: displayEndRow]
 	
-	return render_template("main.html",rows = videoDataToHTML, page = pageno)	
+	return render_template("popular.html",rows = videoDataToHTML, page = pageno)	
+
 
 @application.route('/output')
 def tvml():
@@ -86,3 +123,4 @@ def tvml():
 if __name__ == '__main__':
 	application.run()	
 
+	
