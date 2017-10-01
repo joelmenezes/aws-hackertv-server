@@ -36,8 +36,8 @@ class VideoData(Base):
 		points = Column(Integer)
 		created_at = Column(String(40))
 		source = Column(String(200))
-		image = Column(String(200))
-
+		image = Column(String(200)
+)
 		def __repr__(self):
 			return "<VideoData(id = '%r', title = '%r', url = '%r', time = '%r', points = '%r', created_at = '%r', source = '%r', image = '%r')>" %(
 					self.id, self.title, self.url, self.time, self.points, self.created_at, self.source, self.image)

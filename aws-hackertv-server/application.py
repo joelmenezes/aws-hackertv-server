@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g, url_for, request, Response
+from flask import Flask, render_template, g, url_for, request, Response	
 import requests
 import json
 from sqlalchemy import *
