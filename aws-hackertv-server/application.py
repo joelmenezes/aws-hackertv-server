@@ -14,7 +14,7 @@ listOfVideoData = []
 listOfNewVideoData = []
 
 #Connect to the DB using an engine which is used behind the scenes by the ORM
-engine = create_engine('mysql://hackertv:hackertvforaws@hackertv-server.cjk7sbsmwyfs.us-east-1.rds.amazonaws.com:3306/hackertvdb?charset=utf8', echo=True)
+
 engine.execute("USE hackertvdb")
 
 #Use Declaratives to create a mapping

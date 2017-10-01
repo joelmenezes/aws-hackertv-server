@@ -10,7 +10,7 @@ sys.setdefaultencoding('utf8')
 
 #Connect to the DB using an engine which is used behind the scenes by the ORM
 #add ', echo=True' for console log
-engine = create_engine('mysql://hackertv:hackertvforaws@hackertv-server.cjk7sbsmwyfs.us-east-1.rds.amazonaws.com:3306/hackertvdb?charset=utf8', echo=True)
+
 engine.execute('SET NAMES utf8;')
 engine.execute('SET CHARACTER SET utf8;')
 engine.execute('SET character_set_connection=utf8;')

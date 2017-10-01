@@ -13,7 +13,7 @@ application = Flask(__name__)
 listOfVideoData = []
 
 #Connect to the DB using an engine which is used behind the scenes by the ORM
-engine = create_engine('mysql://hackertv:hackertvforaws@hackertv-server.cjk7sbsmwyfs.us-east-1.rds.amazonaws.com:3306/hackertv?charset=utf8', echo=True)
+
 engine.execute("USE hackertv")
 
 #Use Declaratives to create a mapping
