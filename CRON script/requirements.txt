@@ -36,4 +36,4 @@ requests==2.13.0
 SQLAlchemy==1.1.13
 termcolor==1.1.0
 urllib3==1.21.1
-Werkzeug==0.12.2
+Werkzeug==0.15.3
