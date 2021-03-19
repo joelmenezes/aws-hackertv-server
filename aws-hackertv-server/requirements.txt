@@ -15,7 +15,7 @@ HackerNews==2.0.0
 haxor==0.4
 idna==2.5
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 MarkupSafe==1.0
 MySQL-python==1.2.5
 pandoc==1.0.0b2
