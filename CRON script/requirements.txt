@@ -31,7 +31,7 @@ pytest-cache==1.0
 pytest-cov==1.8.1
 pytest-pep8==1.0.6
 pytest-sugar==0.4.0
-PyYAML==3.12
+PyYAML==5.4
 requests==2.13.0
 SQLAlchemy==1.1.13
 termcolor==1.1.0
